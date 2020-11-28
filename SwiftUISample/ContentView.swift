@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showSheetView = false
+
     private var sfSymbolNames = ["pencil.circle",
                                  "folder.circle",
                                  "paperplane.circle",
@@ -36,17 +38,17 @@ struct ContentView: View {
             .navigationTitle("Instagram")
             .navigationBarItems(trailing:
                 HStack(alignment: .center, content: {
-                    Button(action: addImage, label: {
+                    Button(action: {
+                            self.showSheetView.toggle()
+                    }, label: {
                         Image(systemName: "plus")
                     })
                 })
             )
         }
-        .preferredColorScheme(.dark)
-    }
-
-    func addImage() {
-        print("User selected to add image")
+        .sheet(isPresented: $showSheetView) {
+            SheetView(showSheetView: self.$showSheetView)
+        }
     }
 }
 
