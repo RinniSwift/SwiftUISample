@@ -12,15 +12,14 @@ struct ContentView: View {
                                  "book.circle",
                                  "cloud.bolt.rain",
                                  "cursorarrow.click.2"]
-    private var gridItemLayout = [GridItem(.flexible()),
-                                  GridItem(.flexible()),
-                                  GridItem(.flexible())]
+    private var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 0),
+                                       count: 3)
 
     var body: some View {
         NavigationView {
             HStack(alignment: .top) {
                 ScrollView {
-                    LazyVGrid(columns: gridItemLayout, spacing: 10) {
+                    LazyVGrid(columns: gridItemLayout, spacing: 0) {
                         ForEach((sfSymbolNames.indices), id: \.self) {
                             Image(systemName: sfSymbolNames[$0])
                                 .font(.system(size: 30))
@@ -29,15 +28,25 @@ struct ContentView: View {
                                        minHeight: 80,
                                        alignment: .center)
                                 .background(Color(.systemYellow))
-                                .cornerRadius(8)
+                                .padding(.all, 1)
                         }
                     }
-                    .padding(.all, 10)
                 }
             }
             .navigationTitle("Instagram")
+            .navigationBarItems(trailing:
+                HStack(alignment: .center, content: {
+                    Button(action: addImage, label: {
+                        Image(systemName: "plus")
+                    })
+                })
+            )
         }
         .preferredColorScheme(.dark)
+    }
+
+    func addImage() {
+        print("User selected to add image")
     }
 }
 
