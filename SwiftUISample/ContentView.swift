@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct ContentView: View {
@@ -13,11 +12,13 @@ struct ContentView: View {
                                  "book.circle",
                                  "cloud.bolt.rain",
                                  "cursorarrow.click.2"]
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    private var gridItemLayout = [GridItem(.flexible()),
+                                  GridItem(.flexible()),
+                                  GridItem(.flexible())]
 
     var body: some View {
         NavigationView {
-            HStack {
+            HStack(alignment: .top) {
                 ScrollView {
                     LazyVGrid(columns: gridItemLayout, spacing: 15) {
                         ForEach((sfSymbolNames.indices), id: \.self) {
@@ -26,9 +27,9 @@ struct ContentView: View {
                                     .frame(width: 80, height: 80)
                                     .background(Color(.systemYellow))
                                     .cornerRadius(8)
-                            }
                         }
                     }
+                }
             }
             .navigationTitle("Instagram")
         }
