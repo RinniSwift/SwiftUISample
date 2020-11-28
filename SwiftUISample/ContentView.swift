@@ -22,11 +22,11 @@ struct ContentView: View {
                 ScrollView {
                     LazyVGrid(columns: gridItemLayout, spacing: 15) {
                         ForEach((sfSymbolNames.indices), id: \.self) {
-                                Image(systemName: sfSymbolNames[$0])
-                                    .font(.system(size: 30))
-                                    .frame(width: 80, height: 80)
-                                    .background(Color(.systemYellow))
-                                    .cornerRadius(8)
+                            Image(systemName: sfSymbolNames[$0])
+                                .font(.system(size: 30))
+                                .frame(width: 80, height: 80)
+                                .background(Color(.systemYellow))
+                                .cornerRadius(8)
                         }
                     }
                 }
