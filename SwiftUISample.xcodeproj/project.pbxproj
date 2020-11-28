@@ -115,7 +115,6 @@
 		A4E4C8A5255757E10069BF98 = {
 			isa = PBXGroup;
 			children = (
-				A43D31C825718DEF001C17D6 /* Model */,
 				A4E4C8B0255757E10069BF98 /* SwiftUISample */,
 				A4E4C8C2255757E20069BF98 /* SwiftUISampleTests */,
 				A4E4C8CD255757E20069BF98 /* SwiftUISampleUITests */,
@@ -138,11 +137,12 @@
 		A4E4C8B0255757E10069BF98 /* SwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
+				A43D31C825718DEF001C17D6 /* Model */,
+				A4E4C8B5255757E20069BF98 /* Assets.xcassets */,
 				A4E4C8B1255757E10069BF98 /* SwiftUISampleApp.swift */,
+				A4E4C8BA255757E20069BF98 /* Info.plist */,
 				A4E4C8B3255757E10069BF98 /* ContentView.swift */,
 				A490FEE22572F64700B43131 /* SheetView.swift */,
-				A4E4C8B5255757E20069BF98 /* Assets.xcassets */,
-				A4E4C8BA255757E20069BF98 /* Info.plist */,
 				A4E4C8B7255757E20069BF98 /* Preview Content */,
 			);
 			path = SwiftUISample;
