@@ -20,15 +20,19 @@ struct ContentView: View {
         NavigationView {
             HStack(alignment: .top) {
                 ScrollView {
-                    LazyVGrid(columns: gridItemLayout, spacing: 15) {
+                    LazyVGrid(columns: gridItemLayout, spacing: 10) {
                         ForEach((sfSymbolNames.indices), id: \.self) {
                             Image(systemName: sfSymbolNames[$0])
                                 .font(.system(size: 30))
-                                .frame(width: 80, height: 80)
+                                .frame(minWidth: 0,
+                                       maxWidth: .infinity,
+                                       minHeight: 80,
+                                       alignment: .center)
                                 .background(Color(.systemYellow))
                                 .cornerRadius(8)
                         }
                     }
+                    .padding(.all, 10)
                 }
             }
             .navigationTitle("Instagram")
