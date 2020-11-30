@@ -1,10 +1,3 @@
-//
-//  FilterView.swift
-//  SwiftUISample
-//
-//  Created by Rinni Swift on 11/27/20.
-//
-
 import UIKit
 
 struct Post: Codable {

@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showSheetView = false
+    @State var showImagePicker = false
+    @State var inputImage: UIImage?
 
     private var sfSymbolNames = ["pencil.circle",
                                  "folder.circle",
@@ -14,6 +15,7 @@ struct ContentView: View {
                                  "book.circle",
                                  "cloud.bolt.rain",
                                  "cursorarrow.click.2"]
+    private var posts = [Image]()
     private var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 0),
                                        count: 3)
 
@@ -39,16 +41,21 @@ struct ContentView: View {
             .navigationBarItems(trailing:
                 HStack(alignment: .center, content: {
                     Button(action: {
-                            self.showSheetView.toggle()
+                            self.showImagePicker.toggle()
                     }, label: {
                         Image(systemName: "plus")
                     })
                 })
             )
         }
-        .sheet(isPresented: $showSheetView) {
-            SheetView(showSheetView: self.$showSheetView)
+        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+            SheetView(image: self.$inputImage)
         }
+    }
+
+    func loadImage() {
+        // swiftlint:disable:next todo
+        // TODO: load image into the grid cell
     }
 }
 
