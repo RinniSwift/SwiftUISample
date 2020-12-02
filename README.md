@@ -1,5 +1,9 @@
 # SwiftUI Sample App
 
+<p align="center">
+  <img src="/screen1.png" width="200"/> <img src="/screen2.png" width="200"/>
+</p>
+
 **Resources**
 > - [https://www.appcoda.com/swiftui-lazyvgrid-lazyhgrid/](https://www.appcoda.com/swiftui-lazyvgrid-lazyhgrid/)
 > - [https://www.appcoda.com/learnswiftui/swiftui-gridlayout.html](https://www.appcoda.com/learnswiftui/swiftui-gridlayout.html)
