@@ -49,7 +49,7 @@ struct ContentView: View {
             )
         }
         .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-            SheetView(image: self.$inputImage)
+            ImagePicker(image: self.$inputImage)
         }
     }
 

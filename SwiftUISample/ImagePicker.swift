@@ -1,18 +1,18 @@
 import UIKit
 import SwiftUI
 
-struct SheetView: UIViewControllerRepresentable {
+struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     @Binding var image: UIImage?
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SheetView>) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let imgPicker = UIImagePickerController()
         imgPicker.delegate = context.coordinator
         return UIImagePickerController()
     }
 
     func updateUIViewController(_ uiViewController: UIImagePickerController,
-                                context: UIViewControllerRepresentableContext<SheetView>) {
+                                context: UIViewControllerRepresentableContext<ImagePicker>) {
             // do something
     }
 
@@ -25,15 +25,15 @@ struct SheetView_Previews: PreviewProvider {
     @State static var image: UIImage?
 
     static var previews: some View {
-        SheetView(image: self.$image)
+        ImagePicker(image: self.$image)
     }
 }
 
 class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    let parent: SheetView
+    let parent: ImagePicker
 
-    init(parent: SheetView) {
+    init(parent: ImagePicker) {
         self.parent = parent
     }
 
