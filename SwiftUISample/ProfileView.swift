@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct ProfileView: View {
     @State var showImagePicker = false
     @State var inputImage: UIImage?
 
@@ -61,6 +61,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ProfileView()
     }
 }
