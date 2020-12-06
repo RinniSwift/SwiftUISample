@@ -4,18 +4,17 @@ struct ProfileView: View {
     @State var showImagePicker = false
     @State var inputImage: UIImage?
 
-    private var sfSymbolNames = ["pencil.circle",
-                                 "folder.circle",
-                                 "paperplane.circle",
-                                 "tray.circle",
-                                 "tray.and.arrow.down",
-                                 "doc",
-                                 "calendar.badge.clock",
-                                 "arrowshape.zigzag.forward",
-                                 "book.circle",
-                                 "cloud.bolt.rain",
-                                 "cursorarrow.click.2"]
-    private var posts = [Image]()
+    @State private var posts = [Image(systemName: "pencil.circle"),
+                                Image(systemName: "folder.circle"),
+                                Image(systemName: "paperplane.circle"),
+                                Image(systemName: "tray.circle"),
+                                Image(systemName: "tray.and.arrow.down"),
+                                Image(systemName: "doc"),
+                                Image(systemName: "calendar.badge.clock"),
+                                Image(systemName: "arrowshape.zigzag.forward"),
+                                Image(systemName: "book.circle"),
+                                Image(systemName: "cloud.bolt.rain"),
+                                Image(systemName: "cursorarrow.click.2")]
     private var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 0),
                                        count: 3)
 
@@ -24,8 +23,8 @@ struct ProfileView: View {
             HStack(alignment: .top) {
                 ScrollView {
                     LazyVGrid(columns: gridItemLayout, spacing: 0) {
-                        ForEach((sfSymbolNames.indices), id: \.self) {
-                            Image(systemName: sfSymbolNames[$0])
+                        ForEach((posts.indices), id: \.self) {
+                            posts[$0]
                                 .font(.system(size: 30))
                                 .frame(minWidth: 0,
                                        maxWidth: .infinity,
@@ -54,8 +53,9 @@ struct ProfileView: View {
     }
 
     func loadImage() {
-        // swiftlint:disable:next todo
-        // TODO: load image into the grid cell
+        if let img = inputImage {
+            posts.append(Image(uiImage: img))
+        }
     }
 }
 
