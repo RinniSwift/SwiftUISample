@@ -1,5 +1,7 @@
 import SwiftUI
 
+private let postRatio = (UIScreen.main.bounds.width / 3) - 2
+
 struct ProfileView: View {
     @State var showImagePicker = false
     @State var inputImage: UIImage?
@@ -25,10 +27,8 @@ struct ProfileView: View {
                     LazyVGrid(columns: gridItemLayout, spacing: 0) {
                         ForEach((posts.indices), id: \.self) {
                             posts[$0]
-                                .font(.system(size: 30))
-                                .frame(minWidth: 0,
-                                       maxWidth: .infinity,
-                                       minHeight: 80,
+                                .frame(width: postRatio,
+                                       height: postRatio,
                                        alignment: .center)
                                 .background(Color(.systemYellow))
                                 .padding(.all, 1)
@@ -54,7 +54,8 @@ struct ProfileView: View {
 
     func loadImage() {
         if let img = inputImage {
-            posts.append(Image(uiImage: img))
+            let image = Image(uiImage: img).resizable()
+            posts.append(image)
         }
     }
 }
