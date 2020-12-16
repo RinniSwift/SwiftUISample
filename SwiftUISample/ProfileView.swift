@@ -27,10 +27,12 @@ struct ProfileView: View {
                     LazyVGrid(columns: gridItemLayout, spacing: 0) {
                         ForEach((posts.indices), id: \.self) {
                             posts[$0]
+                                .aspectRatio(contentMode: .fill)
                                 .frame(width: postRatio,
                                        height: postRatio,
                                        alignment: .center)
                                 .background(Color(.systemYellow))
+                                .clipped()
                                 .padding(.all, 1)
                         }
                     }
