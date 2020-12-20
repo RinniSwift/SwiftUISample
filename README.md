@@ -1,7 +1,7 @@
 # SwiftUI Sample App
 
 <p align="center">
-  <img src="/screen1.png" width="200"/> <img src="/screen2.png" width="200"/>
+  <img src="/Images/screen1.png" width="200"/> <img src="/Images/screen2.png" width="200"/>
 </p>
 
 **Resources**
