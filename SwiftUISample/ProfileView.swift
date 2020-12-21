@@ -5,6 +5,7 @@ private let postRatio = (UIScreen.main.bounds.width / 3) - 2
 struct ProfileView: View {
     @State var showImagePicker = false
     @State var inputImage: UIImage?
+    var storageManager = StorageManager()
 
     @State private var posts = [Image(systemName: "pencil.circle"),
                                 Image(systemName: "folder.circle"),
@@ -42,7 +43,7 @@ struct ProfileView: View {
             .navigationBarItems(trailing:
                 HStack(alignment: .center, content: {
                     Button(action: {
-                            self.showImagePicker.toggle()
+                        self.showImagePicker.toggle()
                     }, label: {
                         Image(systemName: "plus")
                     })
@@ -59,6 +60,9 @@ struct ProfileView: View {
             let image = Image(uiImage: img).resizable()
             posts.append(image)
         }
+
+        // resets image back
+        inputImage = nil
     }
 }
 

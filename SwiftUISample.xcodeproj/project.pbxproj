@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4AE9FA4F4EB19007CCC1AFC6 /* libPods-SwiftUISample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F031A4E5D8AB621A6861F1 /* libPods-SwiftUISample.a */; };
 		A43D31CA25718E8E001C17D6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D31C925718E8E001C17D6 /* Post.swift */; };
+		A44DC072258EAF8800B35CDF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44DC071258EAF8800B35CDF /* StorageManager.swift */; };
 		A490FEE32572F64700B43131 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A490FEE22572F64700B43131 /* ImagePicker.swift */; };
 		A4E4C8B2255757E10069BF98 /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E4C8B1255757E10069BF98 /* SwiftUISampleApp.swift */; };
 		A4E4C8B4255757E10069BF98 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E4C8B3255757E10069BF98 /* ProfileView.swift */; };
@@ -46,6 +47,7 @@
 		7FC001FA85ED0D40C1C85049 /* Pods-SwiftUISampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUISampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftUISampleTests/Pods-SwiftUISampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		A43D31C925718E8E001C17D6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A4435E05517D3A2FF386C800 /* libPods-SwiftUISampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftUISampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44DC071258EAF8800B35CDF /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A490FEE22572F64700B43131 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A4E4C8AE255757E10069BF98 /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E4C8B1255757E10069BF98 /* SwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleApp.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A43D31C925718E8E001C17D6 /* Post.swift */,
+				A44DC071258EAF8800B35CDF /* StorageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				A43D31CA25718E8E001C17D6 /* Post.swift in Sources */,
 				A490FEE32572F64700B43131 /* ImagePicker.swift in Sources */,
 				A4E4C8B2255757E10069BF98 /* SwiftUISampleApp.swift in Sources */,
+				A44DC072258EAF8800B35CDF /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
