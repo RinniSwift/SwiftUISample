@@ -7,17 +7,7 @@ struct ProfileView: View {
     @State var inputImage: UIImage?
     var storageManager = StorageManager()
 
-    @State private var posts = [Image(systemName: "pencil.circle"),
-                                Image(systemName: "folder.circle"),
-                                Image(systemName: "paperplane.circle"),
-                                Image(systemName: "tray.circle"),
-                                Image(systemName: "tray.and.arrow.down"),
-                                Image(systemName: "doc"),
-                                Image(systemName: "calendar.badge.clock"),
-                                Image(systemName: "arrowshape.zigzag.forward"),
-                                Image(systemName: "book.circle"),
-                                Image(systemName: "cloud.bolt.rain"),
-                                Image(systemName: "cursorarrow.click.2")]
+    @State private var posts = [Image]()
     private var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 0),
                                        count: 3)
 
@@ -50,12 +40,22 @@ struct ProfileView: View {
                 })
             )
         }
-        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+        .sheet(isPresented: $showImagePicker, onDismiss: addImage) {
             ImagePicker(image: self.$inputImage)
+        }
+        .onAppear(perform: loadPosts)
+    }
+
+    func loadPosts() {
+        do {
+            let images = try storageManager.retrievePosts()
+            posts = images.map({ Image(uiImage: $0) })
+        } catch {
+            print("Error retreiving posts from FileManager -- \(error)")
         }
     }
 
-    func loadImage() {
+    func addImage() {
         if let img = inputImage {
             let image = Image(uiImage: img).resizable()
             posts.append(image)

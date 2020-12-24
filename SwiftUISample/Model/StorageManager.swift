@@ -11,6 +11,8 @@ class StorageManager {
     private var fileManager = FileManager.default
     private var imgDirPath: URL?
 
+    /// Function that returns an array of images that was stored in the file system at the key path
+    /// "postResources", or throws an error.
     func retrievePosts() throws -> [UIImage] {
         guard let path = imageFilePath() else {
             throw StorageError.noKnownPath
@@ -25,7 +27,9 @@ class StorageManager {
         throw StorageError.unknownError
     }
 
-    func storePosts(_ images: [UIImage?]) throws {
+    /// This function will replace the current images that are stored in the file system.
+    /// Stores posts within the file system at the key path "postResources", or throws an error.
+    func storePosts(_ images: [UIImage]) throws {
         guard let path = imageFilePath() else {
             throw StorageError.noKnownPath
         }
