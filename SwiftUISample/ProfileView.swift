@@ -36,6 +36,7 @@ struct ProfileView: View {
                         self.showImagePicker.toggle()
                     }, label: {
                         Image(systemName: "plus")
+                            .imageScale(.large)
                     })
                 })
             )
