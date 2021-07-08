@@ -6,10 +6,29 @@
 //
 
 import SwiftUI
+import UIKit
+
+let cardRatio = UIScreen.main.bounds.width / 2.2
+let cardRadius = UIScreen.main.bounds.width / 25
 
 struct Settings: View {
     var body: some View {
-        Text("Hello, Rinni!")
+        VStack {
+            Text("Hello, Rinni")
+                .font(.largeTitle).bold()
+            ScrollView(.horizontal, showsIndicators: false, content: {
+                HStack {
+                    ForEach(0..<15) {_ in
+                        Text("Item")
+                            .frame(width: cardRatio, height: cardRatio, alignment: .center)
+                            .background(Color.blue)
+                            .cornerRadius(cardRadius)
+
+                    }
+                }
+            })
+            Spacer()
+        }
     }
 }
 
